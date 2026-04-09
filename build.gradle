@@ -1,0 +1,17 @@
+project.description = 'Sample tests demoing VIVIDUS capabilities'
+group = 'org.vividus.demo'
+
+ext.buildSystemPath = "${System.env.VIVIDUS_BUILD_SYSTEM_HOME?:buildSystemRootDir}/${buildSystemVersion}"
+
+apply from: "${buildSystemPath}/vividus-test-project.gradle"
+
+dependencies {
+    implementation platform('org.vividus:vividus-bom:0.6.17')
+    implementation('org.vividus:vividus')
+    implementation('org.vividus:vividus-plugin-electron')
+    implementation('org.vividus:vividus-plugin-rest-api')
+    implementation('org.vividus:vividus-plugin-json')
+    implementation('org.vividus:vividus-plugin-web-app')
+    implementation('org.vividus:vividus-plugin-mobile-app')
+    implementation('org.vividus:vividus-mcp-server')
+}
