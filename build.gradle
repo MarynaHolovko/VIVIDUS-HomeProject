@@ -33,3 +33,9 @@ tasks.named('spotlessCheck') {
 tasks.named('spotlessMiscCheck') {
     enabled = false
 }
+tasks.named('spotlessVividusCheck') {
+    enabled = false
+}
+tasks.withType(Test) {
+    systemProperty 'vividus.story.path', 'story'
+}
